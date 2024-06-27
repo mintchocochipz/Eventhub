@@ -1,0 +1,29 @@
+body {
+    background-color: #ffffff; /* White background */
+    font-size: 14px; /* Larger base font size for better readability */
+    font-family: Georgia, "Times New Roman", Times, serif; /* Changed to Georgia for an elegant, professional look */
+    color: #000000;
+    margin: 10px;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", Times, serif; /* Consistent use of Georgia for headings */
+    border-bottom: 1px solid #AFAFAF;
+    font-size: 20px; /* Larger font size for headings */
+    font-weight: bold;
+    margin: 0px;
+    padding: 10px 0; /* Added padding for visual spacing */
+    color: #D20005;
+}
+
+a:link, a:visited {
+    color: #045491;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:link:hover, a:visited:hover {
+    color: #045491;
+    font-weight: bold;
+    text-decoration: underline;
+}

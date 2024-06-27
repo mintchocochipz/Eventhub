@@ -1,0 +1,54 @@
+#top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 10px; /* Increased padding for better spacing */
+    margin: 0px 0px 20px 0px; /* Adjusted margin for consistency */
+    font-size: 1rem; /* Adjusted font size for better readability */
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 10px;
+    margin: 20px 0px 0px 0px;
+    font-size: 1rem;
+}
+
+#left, #right {
+    float: left; /* Corrected for #right to maintain consistency */
+    background-color: #ece3a5;
+    padding: 10px;
+    width: 150px; /* Adjust width as necessary */
+    font-size: 1rem;
+}
+
+#right {
+    float: right; /* Specific float direction for right */
+}
+
+.center_content, .left_content, .right_content {
+    background-color: #dddddd;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.left_content {
+    margin-left: 190px; /* Adjusted to accommodate increased padding */
+}
+
+.right_content {
+    margin: 0px 190px 0px 190px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover {
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+}

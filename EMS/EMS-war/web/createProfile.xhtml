@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Sign Up</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-image: url('resources/images/background.png');
+                background-size: cover;
+                background-position: center;
+            }
+
+            .user-container {
+                background: #fff;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 450px;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            h2, h3 {
+                text-align: center;
+                color: #333;
+            }
+
+            .input-field, .file-upload, .select-menu {
+                width: 100%;
+                padding: 15px;
+                margin: 15px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+
+            .submit-button {
+                width:100%;
+                padding: 15px;
+                margin: 20px auto;
+                background-image: linear-gradient(to right, #2196F3, #9C27B0);
+                border: none;
+                border-radius: 20px;
+                color: white;
+                cursor: pointer;
+                font-size: 20px;
+                transition: background-image 0.3s ease, transform 0.3s ease;
+            }
+            .submit-button:hover {
+                transform: scale(1.05);
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+        <div class="user-container">
+            <h3>EventHub</h3>
+            <h2>Sign up</h2>
+            <h:form id="userProfileForm" styleClass="user-form">
+
+                <h:outputLabel for="name" value="Name:" styleClass="input-label" />
+                <p:inputText id="name" value="#{personManagedBean.name}" required="true" requiredMessage="Name is required" styleClass="input-field" />        <h:outputLabel for="email" value="Email:" styleClass="input-label" />
+                <p:inputText id="email" value="#{personManagedBean.email}" styleClass="input-field" />
+
+                <h:outputLabel for="phone" value="Phone Number:" styleClass="input-label" />
+                <p:inputText id="phone" value="#{personManagedBean.phone}" styleClass="input-field" />
+
+                <h:outputLabel for="gender" value="Gender:" styleClass="input-label" />
+                <p:selectOneMenu id="gender" value="#{personManagedBean.gender}" styleClass="select-menu">
+                    <f:selectItem itemLabel="Male" itemValue="1" />
+                    <f:selectItem itemLabel="Female" itemValue="2" />
+                    <f:selectItem itemLabel="Prefer not to say" itemValue="" />
+                </p:selectOneMenu>
+
+                <h:outputLabel for="password" value="Password:" styleClass="input-label" />
+                <p:password id="password" value="#{personManagedBean.password}" styleClass="input-field" />
+
+                <p:commandButton value="Submit" actionListener="#{personManagedBean.createPerson}" action="login.xhtml?faces-redirect=true" update=":userProfileForm" styleClass="submit-button" />
+            </h:form>
+        </div>
+    </h:body>
+
+</html>

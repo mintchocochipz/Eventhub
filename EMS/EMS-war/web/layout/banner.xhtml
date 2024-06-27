@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Title</ui:insert></title>
+        <style>
+            #menu {
+                width: 250px;
+                height: 100%;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: -250px;
+                background-color: transparent;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .menu-button {
+                padding: 15px;
+                text-decoration: none;
+                font-size: 20px;
+                color: black;
+                display: block;
+                transition: 0.3s;
+                background-image: linear-gradient(to right, #2196F3, #9C27B0);
+                border-radius: 20px;
+                margin: 10px 0;
+                text-align: center;
+                border: none;
+            }
+
+            /* Change color and font size on hover */
+            .menu-button:hover {
+                color: white;
+                font-size: 23px;
+            }
+
+            .handle {
+                content: ">>";
+                position: fixed;
+                left: 0;
+                top: 60%;
+                width: 30px;
+                height: 80px;
+                background-color: #2196F3;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .handle:hover {
+                background-color: blueviolet;
+            }
+
+            .handle::after {
+                content: ">>";
+                color: white;
+                font-size: 20px;
+            }
+
+            .content {
+                transition: margin-left .5s;
+                padding: 20px;
+                margin-left: 20px;
+            }
+
+
+
+        </style>
+    </h:head>
+
+    <h:body>
+        <div class="handle" onclick="toggleMenu()"></div>
+
+        <div id="menu">
+            <a href="viewEvent.xhtml" class="menu-button">Event Hub</a>
+            <a href="viewMyRegistration.xhtml" class="menu-button">My Signups</a>
+            <a href="createEvent.xhtml" class="menu-button">Post an Event</a>
+            <a href="manageEvent.xhtml" class="menu-button">Manage my Events</a>
+            <a href="editProfile.xhtml" class="menu-button">My Profile</a>
+            <h:form>
+                <h:commandLink value="Logout" action="#{authenticationManagedBean.logout()}" styleClass="menu-button">
+                </h:commandLink>
+            </h:form>
+
+        </div>
+
+
+        <div id="content" class="content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
+                if (menu.style.left === "-250px") {
+                    menu.style.left = "0px";
+                } else {
+                    menu.style.left = "-250px";
+                }
+            }
+        </script>
+    </h:body>
+</html>
